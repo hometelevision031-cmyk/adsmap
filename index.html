@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>AdsMap | Вход</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body">
+
+<div class="auth-container">
+    <h1>🌍 AdsMap</h1>
+    <p>Вход или регистрация</p>
+
+    <input type="text" id="login" placeholder="Логин">
+    <input type="password" id="pass" placeholder="Пароль">
+
+    <button onclick="register()">Регистрация</button>
+    <button onclick="loginUser()">Войти</button>
+</div>
+
+<script>
+function register() {
+    const login = document.getElementById("login").value;
+    const pass = document.getElementById("pass").value;
+
+    if (!login || !pass) {
+        alert("Заполните все поля!");
+        return;
+    }
+
+    localStorage.setItem(login, pass);
+    alert("Регистрация успешна!");
+}
+
+function loginUser() {
+    const login = document.getElementById("login").value;
+    const pass = document.getElementById("pass").value;
+
+    if (localStorage.getItem(login) === pass) {
+        localStorage.setItem("currentUser", login);
+        window.location.href = "app.html";
+    } else {
+        alert("Неверный логин или пароль!");
+    }
+}
+</script>
+
+</body>
+</html>
