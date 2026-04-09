@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>AdsMap | Объявления</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+</head>
+<body>
+
+<header>
+    <h2>📍 AdsMap — Доска объявлений</h2>
+    <div class="header-right">
+        <span id="welcome"></span>
+        <button class="logout-btn" onclick="logout()">Выйти</button>
+    </div>
+</header>
+
+<section class="form">
+    <input id="title" placeholder="Название объявления">
+    <input id="desc" placeholder="Описание">
+    <input id="lat" placeholder="Широта">
+    <input id="lng" placeholder="Долгота">
+    <input type="file" id="image" accept="image/*">
+    <button onclick="addAd()">Добавить объявление</button>
+</section>
+
+<input id="search" placeholder="🔍 Поиск..." oninput="searchAds()">
+
+<div class="container">
+    <div id="map"></div>
+    <div id="list"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
